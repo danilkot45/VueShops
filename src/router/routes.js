@@ -8,7 +8,7 @@ import DetailProduct from '../pages/DetailProduct'
 import Description from '../components/DescriptionPage.vue'
 import ChatacteristicPage from '../components/ChatacteristicPage.vue'
 import Reviews from '../components/ReviewsPage.vue'
-
+import CardBasket from '../pages/CardBasket.vue'
 export default new VueRouter({
     mode: 'history',
     routes: [
@@ -46,6 +46,10 @@ export default new VueRouter({
 
                 },
             ],
+        },
+        {
+            path: '/card',
+            component: CardBasket,
         },
         {
             path: '*',

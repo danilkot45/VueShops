@@ -5,7 +5,7 @@
         <div class="cube"></div>
         <div class="cube"></div>
         <div class="cube"></div>
-        <SliderSale :height="'500px'" :items="this.$store.getters.photoSaleSlider"></SliderSale>
+        <SliderSale :mt="'margin-top:-63px'" :items="Sale"></SliderSale>
         <ProductList></ProductList>
         <TopProduct></TopProduct>
         <News></News>
@@ -16,8 +16,12 @@ import SliderSale from '../components/SliderComponent'
 import ProductList from '../components/ProductListComponent'
 import TopProduct from '../components/TopProductsComponent'
 import News from '../components/NewsComponent.vue'
+import { mapState } from 'vuex'
 export default {
     name: 'HomePage',
+    computed: {
+        ...mapState({ Sale: state => state.products.photoSale })
+    },
     components: {
         SliderSale,
         ProductList,

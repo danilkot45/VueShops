@@ -16,7 +16,7 @@
 
                     <v-spacer></v-spacer>
 
-                    <v-btn color="black lighten-2 white--text">
+                    <v-btn @click="countBuy(i.id, i.title, i.price, i.image)" color="black lighten-2 white--text">
                         Купить
                     </v-btn>
                 </v-card-actions>
@@ -32,12 +32,19 @@ export default {
     name: 'ProductList',
     data() {
         return {
+            count:1
         }
     },
-    mounted() {
-        this.$store.dispatch("fetchProducts");
+    methods:{
+    countBuy(id,title,price,image) {
+      this.$store.dispatch("addBasketId", [id, this.count, title,price,image]);
+      this.$store.dispatch("allCount");
     }
-
+  },
+  mounted() {
+    this.$store.dispatch("fetchProducts");
+    this.$store.dispatch("allCount");
+  }
 }
 </script>
 <style scoped>

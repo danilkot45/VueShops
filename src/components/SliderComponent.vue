@@ -1,11 +1,11 @@
 <template>
-  <v-carousel mb-100 :height="height">
-    <v-carousel-item v-for="(item, index) in items" :key="index" :src="item"></v-carousel-item>
+  <v-carousel :style="mt">
+    <v-carousel-item contain v-for="(item, index) in items" :key="index" :src="item"></v-carousel-item>
   </v-carousel>
 </template>
   <script>
 export default {
-  props: ['items', 'height']
+  props: ['items', 'mt']
 }
 </script>
   <style>

@@ -14,13 +14,18 @@
         <v-spacer></v-spacer>
         <img src="../assets/phone.png" alt="">
         <a style="text-decoration:none" href="tel:+79648525736" class="mr-10 ml-3 black--text">8 (964) 852-57-36</a>
-        <v-btn>
-            <v-img src="../assets/basket.svg" alt=""></v-img>
-        </v-btn>
+        <router-link :to="'/card'">
+            <v-btn>
+                <v-img src="../assets/basket.svg" alt=""></v-img>
+                <div class="counter">{{count}}</div>
+            </v-btn>
+        </router-link>
     </v-app-bar>
 </template>
   
   <script>
+import { mapState } from 'vuex';
+
 export default {
     name: "HeaderComponent",
     data() {
@@ -31,11 +36,26 @@ export default {
                 { path: "/about", name: "О нас" },
             ],
         };
+    },
+    computed:{
+        ...mapState({ count: state => state.card.count })
     }
 }
 </script>
   <style scoped>
   .theme--light.v-btn.v-btn--has-bg {
       background-color: transparent;
+  }
+  
+  .counter {
+      font-weight: bold;
+      width: 22px;
+      height: 16px;
+      background-color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      position: absolute;
+      top: -1px;
+      left: 25px;
   }
   </style>
