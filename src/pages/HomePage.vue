@@ -5,7 +5,9 @@
         <div class="cube"></div>
         <div class="cube"></div>
         <div class="cube"></div>
-        <SliderSale :mt="'margin-top:-63px'" :items="Sale"></SliderSale>
+        <div style="margin-top:-63px">
+            <SliderSale :items="Sale"></SliderSale>
+        </div>
         <ProductList></ProductList>
         <TopProduct></TopProduct>
         <News></News>

@@ -1,5 +1,5 @@
 <template>
-  <v-carousel :style="mt">
+  <v-carousel>
     <v-carousel-item contain v-for="(item, index) in items" :key="index" :src="item"></v-carousel-item>
   </v-carousel>
 </template>

@@ -10,6 +10,7 @@ export default {
 </script>
 <style>
 .category {
+    min-height: 525px;
     text-align: center;
 }
 </style>

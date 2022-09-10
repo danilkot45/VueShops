@@ -2,7 +2,7 @@
   <div>
     <h1 class="text-center my-10 white--text">Наши товары</h1>
     <v-row class="flex mx-auto">
-      <v-card class="mx-auto card mt-5" max-width="344" v-for="(i, index) in allProducts" :key="index">
+      <v-card class="mx-auto card mt-5" max-width="344" v-for="(i, index) in allProducts" :key="i.id">
         <router-link :to="'/product/' + i.id + '/description'">
           <v-img contain class="img" :src="i.image" height="300px"></v-img>
           <v-card-title>
@@ -15,7 +15,7 @@
 
           <v-spacer></v-spacer>
 
-          <v-btn @click="countBuy(i.id,i.title,i.price, i.image)" color="black lighten-2 white--text">
+          <v-btn @click="countBuy(i)" color="black lighten-2 white--text">
             Купить
           </v-btn>
         </v-card-actions>
@@ -41,7 +41,7 @@ export default {
     ...mapGetters(['allProducts'])
   },
   methods: {
-    countBuy(id, title,price, image) {
+    countBuy({id, title,price, image}) {
       this.$store.dispatch("addBasketId", [id, this.count, title,price,image]);
       this.$store.dispatch("allCount");
     }

@@ -10,6 +10,7 @@ export default {
 </script>
 <style>
 .about {
+    min-height: 525px;
     text-align: center;
 }
 </style>
