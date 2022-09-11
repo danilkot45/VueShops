@@ -2,7 +2,7 @@
   <div>
     <h1 class="text-center my-10 white--text">Наши товары</h1>
     <v-row class="flex mx-auto">
-      <v-card class="mx-auto card mt-5" max-width="344" v-for="(i, index) in allProducts" :key="i.id">
+      <v-card class="mx-auto card mt-5" max-width="344" v-for="(i, index) in products" :key="i.id">
         <router-link :to="'/product/' + i.id + '/description'">
           <v-img contain class="img" :src="i.image" height="300px"></v-img>
           <v-card-title>
@@ -26,19 +26,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 
 
 export default {
+  props:['products'],
   name: 'ProductList',
   data() {
     return {
       count: 1,
       basketId: []
     }
-  },
-  computed: {
-    ...mapGetters(['allProducts'])
   },
   methods: {
     countBuy({id, title,price, image}) {
@@ -48,7 +45,6 @@ export default {
 
   },
   mounted() {
-    this.$store.dispatch("fetchProducts");
     this.$store.dispatch("allCount");
   }
 

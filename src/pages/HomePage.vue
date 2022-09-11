@@ -8,7 +8,7 @@
         <div style="margin-top:-63px">
             <SliderSale :items="Sale"></SliderSale>
         </div>
-        <ProductList></ProductList>
+        <ProductList :products="allProducts"></ProductList>
         <TopProduct></TopProduct>
         <News></News>
     </div>
@@ -22,13 +22,17 @@ import { mapState } from 'vuex'
 export default {
     name: 'HomePage',
     computed: {
-        ...mapState({ Sale: state => state.products.photoSale })
+        ...mapState({ Sale: state => state.products.photoSale }),
+        ...mapState({allProducts: state => state.products.products})
     },
     components: {
         SliderSale,
         ProductList,
         TopProduct,
         News
+    },
+    mounted(){
+        this.$store.dispatch("fetchProducts");
     }
 }
 </script>

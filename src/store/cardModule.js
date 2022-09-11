@@ -1,12 +1,12 @@
 export default {
     actions: {
-            addBasketId(ctx, [id, count, title,price,img ]) {
+        addBasketId(ctx, [id, count, title, price, img]) {
             let listBasketId = localStorage.getItem("BasketWithCard")
             let arrBasket = []
             if (listBasketId) {
                 arrBasket = JSON.parse(listBasketId)
             } else {
-                arrBasket.push({ id: id, count: 0, title: title, price: price, image: img  })
+                arrBasket.push({ id: id, count: 0, title: title, price: price, image: img })
             }
             let arrBasketEl = arrBasket.find((a) => a.id === id);
             if (arrBasketEl) {
@@ -20,15 +20,18 @@ export default {
         },
         allCount(ctx) {
             let allCount = 0
-
-            for (let i = 0; i < JSON.parse(localStorage.getItem("BasketWithCard")).length; i++) {
-                allCount += JSON.parse(localStorage.getItem("BasketWithCard"))[i].count;
+            try {
+                for (let i = 0; i < JSON.parse(localStorage.getItem("BasketWithCard")).length; i++) {
+                    allCount += JSON.parse(localStorage.getItem("BasketWithCard"))[i].count;
+                }
+                ctx.commit("Count", allCount)
+            } catch (e) {
+                allCount = 0
+                ctx.commit("Count", allCount)
             }
-            console.log(allCount)
-            ctx.commit("Count", allCount)
         },
-        fetchBasket(ctx){
-           let basket = JSON.parse(localStorage.getItem("BasketWithCard"))
+        fetchBasket(ctx) {
+            let basket = JSON.parse(localStorage.getItem("BasketWithCard"))
             ctx.commit("addCard", basket)
         }
     },
@@ -36,7 +39,7 @@ export default {
         addCard(state, addToBasketId) {
             state.basketId = addToBasketId
         },
-        Count(state, counter){
+        Count(state, counter) {
             state.count = counter
         }
     },
@@ -45,7 +48,7 @@ export default {
         count: 0
     },
     getters: {
-        showBasket(state){
+        showBasket(state) {
             return state.basketId
         }
     }

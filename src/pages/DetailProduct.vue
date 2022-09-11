@@ -14,7 +14,7 @@
                     <v-icon class="btn-icon" style="background:black" color="white">mdi-plus</v-icon>
                 </v-btn>
             </v-row>
-            <ProductTabsComponent :desc="productItem.description"></ProductTabsComponent>
+            <ProductTabsComponent :desc="productItem.description" :idProduct="productItem.id"></ProductTabsComponent>
             <v-card-actions class="card-actions">
                 <v-spacer></v-spacer>
                 <v-card-title> Цена: {{ productItem.price }}$ </v-card-title>

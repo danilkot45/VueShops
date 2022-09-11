@@ -17,7 +17,7 @@
         <v-tabs-items>
             <v-card>
                 <v-card-text>
-                    <router-view :desc="desc"></router-view>
+                    <router-view :desc="desc" :idProduct="idProduct"></router-view>
                 </v-card-text>
             </v-card>
         </v-tabs-items>
@@ -25,7 +25,7 @@
 </template>
   <script>
 export default {
-    props: ['desc']
+    props: ['desc','idProduct']
 }
 </script>
   <style scoped>
