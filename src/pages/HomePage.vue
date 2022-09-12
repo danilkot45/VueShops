@@ -22,8 +22,7 @@ import { mapState } from 'vuex'
 export default {
     name: 'HomePage',
     computed: {
-        ...mapState({ Sale: state => state.products.photoSale }),
-        ...mapState({allProducts: state => state.products.products})
+        ...mapState({ Sale: state => state.products.photoSale, allProducts: state => state.products.products })
     },
     components: {
         SliderSale,

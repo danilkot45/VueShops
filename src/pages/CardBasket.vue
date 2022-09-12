@@ -22,10 +22,10 @@
                             <v-container>
                                 <v-row>
                                     <v-col cols="12" sm="6">
-                                        <v-text-field type="text" label="Ваше имя" :rules="[v => /^[a-z а-я ,.'-]+$/i.test(v) || 'Введите имя']"  v-model="firstname" required></v-text-field>
+                                        <v-text-field type="text" label="Ваше имя" :rules="[nameRules]"  v-model="firstname" required></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="6">
-                                        <v-text-field type="text" label="Ваша фамилия" :rules="[v => /^[a-z а-я ,.'-]+$/i.test(v) || 'Введите фамилию']" v-model="lastname" required></v-text-field>
+                                        <v-text-field type="text" label="Ваша фамилия" :rules="[nameRules]" v-model="lastname" required></v-text-field>
                                     </v-col>
                                     <v-col cols="12">
                                         <v-text-field type="tel" label="Телефон*" :rules="[v =>/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/.test(v) || 'Пример: 89123456789' ]" v-model="tel" required ></v-text-field>
@@ -92,6 +92,7 @@ export default {
             dialog: false,
             firstname:"",
             lastname:"",
+            nameRules: v => /^[a-z а-я ,.'-]+$/i.test(v) ,
             tel:"",
             adress:"",
             city:"",

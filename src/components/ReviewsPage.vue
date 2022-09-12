@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col>
-        <v-card class="mb-2" v-for="i in getReviews">
+        <v-card class="mb-2" v-for="i in getReviews" :key="i.id">
           <v-card-title v-model="title"> {{ i.name }}</v-card-title>
           <v-card-subtitle v-model="reviews">{{ i.reviews }}</v-card-subtitle>
           <v-card-text>{{ i.date }}</v-card-text>
