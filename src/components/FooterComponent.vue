@@ -10,16 +10,16 @@
             </v-card-text>
 
             <v-card-text class="white--text pt-0">
-                Разработал Красавцев Даниил
+                Developed by Krasavtsev Daniil
             </v-card-text>
             <v-card-text class="white--text pt-0">
-                Адрес: г. Саранск, ул. Советская 77А
+                National Research Mordovia State University
             </v-card-text>
 
             <v-divider></v-divider>
 
             <v-card-text class="white--text">
-                &copy;2022 — <strong>Vuetify</strong>
+                &copy;2022 — <strong>Vue</strong>
             </v-card-text>
         </v-card>
     </v-footer>

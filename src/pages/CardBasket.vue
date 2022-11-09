@@ -6,54 +6,54 @@
         <div class="cube"></div>
         <div class="cube"></div>
         <div style="background:black" class="flex mb-10">
-            <h1 class="white--text text-center">✨ Ваша корзина ✨</h1>
+            <h1 class="white--text text-center">✨ Your shopping cart ✨</h1>
             <v-dialog v-model="dialog" persistent max-width="600px">
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn style="background:white" class="mb-2" v-bind="attrs"
-                        v-on="on">Перейти к оформлению
+                        v-on="on">Proceed to ordering
                     </v-btn>
                 </template>
                     <v-card>
                         <v-card-title>
-                            <span class="text-h5">Заполните ваши данные</span>
+                            <span class="text-h5">Fill in your details</span>
                         </v-card-title>
                         <form @submit.prevent="sendDataToServer()">
                         <v-card-text>
                             <v-container>
                                 <v-row>
                                     <v-col cols="12" sm="6">
-                                        <v-text-field type="text" label="Ваше имя" :rules="[nameRules]"  v-model="firstname" required></v-text-field>
+                                        <v-text-field type="text" label="Your name" :rules="[nameRules]"  v-model="firstname" required></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="6">
-                                        <v-text-field type="text" label="Ваша фамилия" :rules="[nameRules]" v-model="lastname" required></v-text-field>
+                                        <v-text-field type="text" label="Your lastname" :rules="[nameRules]" v-model="lastname" required></v-text-field>
                                     </v-col>
                                     <v-col cols="12">
-                                        <v-text-field type="tel" label="Телефон*" :rules="[v =>/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/.test(v) || 'Пример: 89123456789' ]" v-model="tel" required ></v-text-field>
+                                        <v-text-field type="tel" label="Telephone*" :rules="[v =>/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/.test(v) || 'Example: 89123456789' ]" v-model="tel" required ></v-text-field>
                                     </v-col>
                                     <v-col cols="12">
-                                        <v-text-field  type="text" label="Адрес*" :rules="[v => !!v || 'Введите адрес места проживания']" v-model="adress" required></v-text-field>
+                                        <v-text-field  type="text" label="Address*" :rules="[v => !!v || 'Enter the address of the place of residence']" v-model="adress" required></v-text-field>
                                     </v-col>
                                     <v-col cols="12">
-                                        <v-text-field  type="text" label="Город*" :rules="[v => !!v || 'Введите город']" v-model="city" required></v-text-field>
+                                        <v-text-field  type="text" label="City*" :rules="[v => !!v || 'Enter city']" v-model="city" required></v-text-field>
                                     </v-col>
                                     <v-col cols="12">
-                                        <v-select :items="['Наличными', 'Сертификат', 'Перевод по карте']" v-model="payment"
-                                            label="Cпособ оплаты" ></v-select>
+                                        <v-select :items="['Cash', 'Certificate', 'Card transfer']" v-model="payment"
+                                            label="Payment method" ></v-select>
                                         <v-col cols="12">
-                                            Итого: <b>{{ SumPrice.toFixed(2) }}</b>
+                                            Total: <b>{{ SumPrice.toFixed(2) }}</b>
                                         </v-col>
                                     </v-col>
                                 </v-row>
                             </v-container>
-                            <small>*Подтверждая заказ, вы соглашаетесь со всеми условиями магазина</small>
+                            <small>*By confirming the order, you agree to all the terms of the store</small>
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn color="blue darken-1" text @click="dialog = false">
-                                Выйти
+                                Exit
                             </v-btn>
                                 <v-btn color="blue darken-1" text type="submit">
-                                    Подтвердить заказ
+                                    Confirm the order
                                 </v-btn>
                         </v-card-actions>
                     </form>
@@ -74,9 +74,9 @@
                     </v-btn>
                 </v-row>
                 <v-card-actions class="card-actions mt-10">
-                    <v-card-title> Цена: {{ MultiplicationPriceAndCount(i.count, i.price).toFixed(2) }}$ </v-card-title>
+                    <v-card-title> Price: {{ MultiplicationPriceAndCount(i.count, i.price).toFixed(2) }}$ </v-card-title>
                     <v-spacer></v-spacer>
-                    <v-btn class="error" @click="removeBasketItem(index)">Удалить</v-btn>
+                    <v-btn class="error" @click="removeBasketItem(index)">Delete</v-btn>
                 </v-card-actions>
             </v-card>
         </v-row>

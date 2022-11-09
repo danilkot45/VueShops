@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center my-10 white--text">Наши товары</h1>
+    <h1 class="text-center my-10 white--text">Our products</h1>
     <v-row class="flex mx-auto">
       <v-card class="mx-auto card mt-5" max-width="344" v-for="(i, index) in products" :key="i.id">
         <router-link :to="'/product/' + i.id + '/description'">
@@ -16,7 +16,7 @@
           <v-spacer></v-spacer>
 
           <v-btn @click="countBuy(i)" color="black lighten-2 white--text">
-            Купить
+            Buy
           </v-btn>
         </v-card-actions>
 

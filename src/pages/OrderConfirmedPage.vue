@@ -1,8 +1,8 @@
 <template>
     <div class="order">
-        <h3 class="white--text pt-13">Спасибо за заказ!🌸</h3>
-        <h1 class="white--text" style="font-size:40px"> Номер вашего заказа №{{ Random }}</h1>
-        <h2 class="white--text" style="font-size:30px">Вернуться за <router-link to="/"><b>новыми покупками</b>
+        <h3 class="white--text pt-13">Thanks for your order!🌸</h3>
+        <h1 class="white--text" style="font-size:40px"> Your order №{{ Random }}</h1>
+        <h2 class="white--text" style="font-size:30px">Come back for <router-link to="/"><b>new purchases</b>
             </router-link> 🛍
         </h2>
     </div>

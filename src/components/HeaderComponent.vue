@@ -31,9 +31,9 @@ export default {
     data() {
         return {
             nav: [
-                { path: "/category", name: "Категории" },
-                { path: "/news", name: "Новости" },
-                { path: "/about", name: "О нас" },
+                { path: "/category", name: "Category" },
+                { path: "/news", name: "News" },
+                { path: "/about", name: "About us" },
             ],
         };
     },

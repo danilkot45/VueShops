@@ -17,11 +17,11 @@
             <ProductTabsComponent :desc="productItem.description" :idProduct="productItem.id"></ProductTabsComponent>
             <v-card-actions class="card-actions">
                 <v-spacer></v-spacer>
-                <v-card-title> Цена: {{ productItem.price }}$ </v-card-title>
+                <v-card-title> Price: {{ productItem.price }}$ </v-card-title>
 
                 <v-spacer></v-spacer>
 
-                <v-btn @click="countBuy()" color="black lighten-2" class="white--text">Купить</v-btn>
+                <v-btn @click="countBuy()" color="black lighten-2" class="white--text">Buy</v-btn>
                 <v-spacer></v-spacer>
             </v-card-actions>
         </v-card>

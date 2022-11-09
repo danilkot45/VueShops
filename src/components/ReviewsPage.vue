@@ -10,10 +10,10 @@
       </v-col>
       <v-col>
         <form>
-          <v-text-field v-model="title" :counter="15" label="Ваше имя" required></v-text-field>
-          <v-text-field v-model="reviews" label="Ваш отзыв" required></v-text-field>
+          <v-text-field v-model="title" :counter="15" label="Your name" required></v-text-field>
+          <v-text-field v-model="reviews" label="Your feedback" required></v-text-field>
 
-          <v-btn class="secondary" @click="SendReviews()">Отправить отзыв</v-btn>
+          <v-btn class="secondary" @click="SendReviews()">Post a review </v-btn>
         </form>
       </v-col>
     </v-row>

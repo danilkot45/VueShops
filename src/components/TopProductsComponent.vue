@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="text-center my-10 white--text">Топ товары</h1>
+        <h1 class="text-center my-10 white--text">Top products</h1>
         <v-row class="flex mx-auto">
             <v-card class="mx-auto card mt-5" max-width="344" v-for="(i, index) in this.$store.getters.topProducts"
                 :key="index">
@@ -17,7 +17,7 @@
                     <v-spacer></v-spacer>
 
                     <v-btn @click="countBuy(i.id, i.title, i.price, i.image)" color="black lighten-2 white--text">
-                        Купить
+                        Buy
                     </v-btn>
                 </v-card-actions>
 

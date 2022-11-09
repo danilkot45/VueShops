@@ -3,7 +3,7 @@
         <v-container fluid>
             <v-row>
                 <v-col class="d-flex mt-5 ml-2" cols="12" sm="6">
-                    <b><v-select :items="categories" @change="page=1"  v-model="category" label="Выберите категорию"></v-select></b>
+                    <b><v-select :items="categories" @change="page=1"  v-model="category" label="Select a category"></v-select></b>
                 </v-col>
             </v-row>
             <ProductList :products="productItems"></ProductList>
@@ -23,8 +23,8 @@ import TopProduct from '../components/TopProductsComponent'
 export default {
     data() {
         return {
-            categories: ['Все товары'],
-            category: 'Все товары',
+            categories: ['All'],
+            category: 'All',
             page:1
         }
     },
@@ -37,10 +37,10 @@ export default {
                 this.categories.push(arr[i].category)
             }
         }
-            return this.allProducts.filter((item) => item.category == this.category || this.category == "Все товары").splice(this.page*4-4, 4)
+            return this.allProducts.filter((item) => item.category == this.category || this.category == "All").splice(this.page*4-4, 4)
         },
         sizePages() {
-            let arr = this.allProducts.filter((item) => item.category == this.category || this.category == "Все товары").length
+            let arr = this.allProducts.filter((item) => item.category == this.category || this.category == "All").length
            return  Math.ceil(arr / 4)
     },
     },

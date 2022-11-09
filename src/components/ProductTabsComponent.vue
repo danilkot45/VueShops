@@ -2,15 +2,15 @@
     <v-card color="purple" class="my-1">
         <v-tabs background-color="transparent" color="black">
             <router-link :to="'description'">
-                <v-tab class="mt-4">Описание</v-tab>
+                <v-tab class="mt-4">Description</v-tab>
             </router-link>
 
             <router-link :to="'characteristic'">
-                <v-tab class="mt-4">Характеристики</v-tab>
+                <v-tab class="mt-4">Characteristics</v-tab>
             </router-link>
 
             <router-link :to="'reviews'">
-                <v-tab class="mt-4">Отзывы </v-tab>
+                <v-tab class="mt-4">Reviews </v-tab>
             </router-link>
         </v-tabs>
 
